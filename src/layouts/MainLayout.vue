@@ -41,8 +41,29 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import { useQuasar } from 'quasar';
+import { pokemonStore } from 'stores/pokemon';
 import EssentialLink from 'components/EssentialLink.vue';
+
+const $q = useQuasar();
+
+onMounted(() => {
+  $q.loading.show({
+    message: 'Cargando Pokémon. Por favor, espere...',
+    messageColor: 'text-grey-2',
+    boxClass: 'text-h6',
+    spinnerColor: 'primary',
+    backgroundColor: 'purple',
+  });
+  setTimeout(() => {
+    pokemonStore()
+      .fetchPokemons()
+      .finally(() => {
+        $q.loading.hide();
+      });
+  }, 1000);
+});
 
 const essentialLinks = [
   {
@@ -90,8 +111,4 @@ const essentialLinks = [
 ];
 
 const leftDrawerOpen = ref(false);
-
-// function toggleLeftDrawer() {
-//   leftDrawerOpen.value = !leftDrawerOpen.value;
-// }
 </script>

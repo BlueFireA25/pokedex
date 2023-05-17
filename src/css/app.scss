@@ -39,7 +39,7 @@ body {
   color: var(--accent-200) !important;
 }
 
-.text-grey-1 {
+.text-white {
   color: var(--text-100) !important;
 }
 
@@ -56,5 +56,113 @@ body {
 }
 
 .bg-grey-3 {
-  background: var(--bg-300);
+  background: var(--bg-300) !important;
+}
+
+.normal-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #9e9e9e;
+}
+
+.fighting-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #e64a19;
+}
+
+.flying-card {
+  border-radius: 20px;
+  color: #000000;
+  background-image: radial-gradient(ellipse, #eceff1 40%, #4fc3f7 100%);
+}
+
+.poison-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #7b1fa2;
+}
+
+.ground-card {
+  border-radius: 20px;
+  color: #000000;
+  background-color: #ddbb55;
+}
+
+.rock-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #a38c21;
+}
+
+.bug-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #689f38;
+}
+
+.ghost-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #512da8;
+}
+
+.steel-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #78909c;
+}
+
+.fire-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #fd7d24;
+}
+
+.water-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #4491c3;
+}
+
+.grass-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #388e3c;
+}
+
+.electric-card {
+  border-radius: 20px;
+  color: #000000;
+  background-color: #ffeb3b;
+}
+
+.psychic-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #e040fb;
+}
+
+.ice-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #81d4fa;
+}
+
+.dragon-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-image: radial-gradient(ellipse, #53a4cf 25%, #d12c0f 100%);
+}
+
+.dark-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #212121;
+}
+
+.fairy-card {
+  border-radius: 20px;
+  color: #ffffff;
+  background-color: #ff80ab;
 }

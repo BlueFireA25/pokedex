@@ -2,34 +2,34 @@ import { defineStore } from 'pinia';
 import { api } from 'src/boot/axios';
 import { Notify } from 'quasar';
 import { Result } from 'components/models/models';
-import { Pokemon } from 'components/models/pokemon';
+import { PokemonSpecie } from 'components/models/pokemon-species';
 
-function defaultState(): Pokemon[] {
+function defaultState(): PokemonSpecie[] {
   return [];
 }
 
-export const pokemonStore = defineStore('pokemon', {
+export const pokemonSpeciesStore = defineStore('pokemonSpecies', {
   state: () => defaultState(),
 
   actions: {
     async fetchPokemons() {
       api
-        .get('/pokemon?limit=251')
+        .get('/pokemon-species?limit=251')
         .then((response) => {
           const results = response.data.results as Result[];
 
-          const pokemons = results.map(async (pokemon) => {
+          const pokemonSpecies = results.map(async (pokemon) => {
             const { data } = await api.get(pokemon.url);
             this.$state.push(data);
           });
 
-          return pokemons;
+          return pokemonSpecies;
         })
         .catch((error) => {
           Notify.create({
             icon: 'warning',
             type: 'negative',
-            message: 'Error loading Pokemon list.',
+            message: 'Error loading Pokemon Species list.',
             timeout: 2000,
           });
           return error;

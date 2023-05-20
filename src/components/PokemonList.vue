@@ -104,18 +104,23 @@
       </div>
     </div>
   </div>
-  <div class="text-h4">
-    <q-pagination
-      v-if="pokemons"
-      v-model="page"
-      :min="currentPage"
-      :max="Math.ceil(pokemons.length / totalPages)"
-      :max-pages="6"
-      direction-links
-      class="q-mt-xl full-width flex-center"
-    >
-    </q-pagination>
+  <div
+    class="q-mt-xl full-width flex-center text-white text-center text-h4 text-weight-bold"
+    v-if="!pokemonsFilter.length"
+  >
+    <q-icon class="q-mb-sm" name="search_off" size="xl" />
+    <div>No results found</div>
   </div>
+  <q-pagination
+    v-if="pokemons"
+    v-model="page"
+    :min="currentPage"
+    :max="Math.ceil(pokemons.length / totalPages)"
+    :max-pages="6"
+    direction-links
+    class="q-mt-xl full-width flex-center"
+  >
+  </q-pagination>
 </template>
 
 <script setup lang="ts">
